@@ -1,27 +1,28 @@
 from selenium.webdriver.chrome.options import Options
 
-
 OPTIONS = Options()
 URL = r"https://app.schoolinks.com/course-catalog/katy-isd/course-offerings"
-COURSE_COUNT = 1275
+COURSE_COUNT = 200
+SCHOOL_COUNT = 5
 FILE_NAME = 'courses.csv'
+LOADTIME = 15
 
 FIELDNAMES = [
-    'courses_id',
-    'courses_name',
-    'courses_credits',
-    'courses_tags',
-    'courses_subject',
-    'courses_term',
-    'courses_eligible_grades',
-    'courses_prerequisite',
-    'courses_corequisite',
-    'courses_elective']
+    'id',
+    'name',
+    'credits',
+    'tags',
+    'subject',
+    'term',
+    'eligible_grades',
+    'prerequisite',
+    'corequisite',
+    'elective',
+    'schools'
+]
 
 
 def HEADLESS():
     OPTIONS.add_argument('--headless')
     return OPTIONS
 
-
-# set home in pyvenv.cfg = E:\Python\Python310

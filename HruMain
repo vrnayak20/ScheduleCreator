@@ -1,5 +1,0 @@
-from writer.writer import Writer
-
-writer = Writer()
-writer.get_data()
-writer.write()

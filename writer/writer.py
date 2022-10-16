@@ -8,7 +8,7 @@ class Writer:
 
     def get_data(self):
         headless = input('Headless? ').__contains__('y' or 'Y')
-        self.scraper = SchoolScraper(options=(const.HEADLESS() if headless else None))
+        self.scraper = SchoolScraper(options=(const.HEADLESS() if headless else None), debug=False)
         self.scraper.run()
 
     def write(self):
@@ -17,7 +17,7 @@ class Writer:
             writer.writeheader()
 
             # run through every course
-            for course_index in range(const.COURSE_COUNT):
+            for course_index in range(self.scraper.course_count()):
                 course_data = {}
                 # run through all types of data for that course
                 for fieldname in const.FIELDNAMES:

@@ -16,12 +16,7 @@ class Course:
     def __str__(self):
         return f'ID: {self.id}, ' \
                f'Name: {self.name}, ' \
-               f'Subject: {self.subject}, ' \
-               f'Tags: {self.tags}, ' \
-               f'GPA: {self.gpa}, ' \
-               f'Credits: {self.credits}, ' \
-               f'Grades Offered In: {self.grades}, ' \
-               f'Pre-reqs: {self.prerequisites}'
+               f'GPA: {self.gpa}'
 
     def __eq__(self, other):
-        return self.name == other.name
+        return self.name == other.name and self.tags == other.tags
